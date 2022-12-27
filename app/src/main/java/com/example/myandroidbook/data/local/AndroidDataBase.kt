@@ -6,10 +6,10 @@ import androidx.room.TypeConverters
 import com.example.myandroidbook.data.local.dao.AndroidDao
 import com.example.myandroidbook.data.local.dao.AndroidDaoRemoteKey
 import com.example.myandroidbook.domain.model.AndroidModel
-import com.example.myandroidbook.domain.model.AndroidRemoteKey
+import com.example.myandroidbook.domain.model.AndroidRemoteKeys
 
 
-@Database(entities = [AndroidModel::class,AndroidRemoteKey::class], version = 1)
+@Database(entities = [AndroidModel::class,AndroidRemoteKeys::class], version = 1)
 @TypeConverters(DataBaseConverter::class)
 abstract class AndroidDataBase: RoomDatabase() {
 

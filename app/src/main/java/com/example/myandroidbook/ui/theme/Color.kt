@@ -29,6 +29,14 @@ val onBoardingLightDes = Color(0xFF997B66)
 val welcomeLight = Color(0xFFEDE0D4)
 val welcomeDark = Color(0xFF2E3043)
 
+val topBarContentLight = Color(0xFF997B66)
+val topBarContentDark = Color(0xFFBEC3E7)
+
+val topBarBackgroundLight = Color(0xFFFFEDE0D4)
+val topBarBackgroundDark = Color(0xFF2E3043)
+
+val iconLightSearch = Color(0xFF997B66)
+val iconDarkSearch = Color(0xFFBEC3E7)
 
 
 val Colors.buttonColor
@@ -52,3 +60,11 @@ get() = if (isLight) onBoardingLightTitle else onBoardingDarkTitle
 val Colors.descriptionOnBoarding
 get() = if (isLight) onBoardingLightDes else onBoardingDarkDes
 
+val Colors.topBarContent
+get() = if (isLight) topBarContentLight else topBarContentDark
+
+val Colors.topBarBackground
+get() = if (isLight) topBarBackgroundLight else topBarBackgroundDark
+
+val Colors.searchIcon
+get() = if (isLight) iconLightSearch else iconDarkSearch
