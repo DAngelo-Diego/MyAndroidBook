@@ -5,7 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.myandroidbook.presentation.screen.HomeScreen
+import com.example.myandroidbook.presentation.screen.home.HomeScreen
 import com.example.myandroidbook.presentation.screen.welcome.WelcomeScreen
 import com.google.accompanist.pager.ExperimentalPagerApi
 
