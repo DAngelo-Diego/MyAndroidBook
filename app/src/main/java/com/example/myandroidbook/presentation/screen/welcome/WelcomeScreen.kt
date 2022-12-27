@@ -1,8 +1,9 @@
-package com.example.myandroidbook.presentation.screen
+package com.example.myandroidbook.presentation.screen.welcome
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -11,7 +12,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -21,7 +21,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.myandroidbook.navigation.Screen
 import com.example.myandroidbook.domain.model.OnBoardingPage
-import com.example.myandroidbook.presentation.screen.welcome.WelcomeViewModel
+import com.example.myandroidbook.ui.theme.*
 import com.google.accompanist.pager.*
 
 @ExperimentalAnimationApi
@@ -38,7 +38,11 @@ fun WelcomeScreen(
     )
     val pagerState = rememberPagerState()
 
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = MaterialTheme.colors.onBoardingThemesBackground)
+    ) {
         HorizontalPager(
             modifier = Modifier.weight(10f),
             count = 3,
@@ -51,7 +55,9 @@ fun WelcomeScreen(
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
                 .weight(1f),
-            pagerState = pagerState
+            pagerState = pagerState,
+            inactiveColor = MaterialTheme.colors.pagerIndicatorInactive,
+            activeColor = MaterialTheme.colors.pagerIndicatorActive
         )
         FinishButton(
             modifier = Modifier.weight(1f),
@@ -85,7 +91,8 @@ fun PagerScreen(onBoardingPage: OnBoardingPage) {
             text = onBoardingPage.title,
             fontSize = MaterialTheme.typography.h4.fontSize,
             fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            color = MaterialTheme.colors.titleOnBoarding
         )
         Text(
             modifier = Modifier
@@ -95,7 +102,8 @@ fun PagerScreen(onBoardingPage: OnBoardingPage) {
             text = onBoardingPage.description,
             fontSize = MaterialTheme.typography.subtitle1.fontSize,
             fontWeight = FontWeight.Medium,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            color = MaterialTheme.colors.descriptionOnBoarding
         )
     }
 }
@@ -121,7 +129,8 @@ fun FinishButton(
             Button(
                 onClick = onClick,
                 colors = ButtonDefaults.buttonColors(
-                    contentColor = Color.White
+                    contentColor = MaterialTheme.colors.buttonContentColor,
+                    backgroundColor = MaterialTheme.colors.buttonColor
                 )
             ) {
                 Text(text = "Finish")

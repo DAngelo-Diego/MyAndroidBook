@@ -11,19 +11,19 @@ sealed class OnBoardingPage(
 ) {
     object First : OnBoardingPage(
         image = R.drawable.first,
-        title = "Meeting",
-        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."
+        title = "Road to Knowledge",
+        description = "Learn with the last and best examples from the official documents"
     )
 
     object Second : OnBoardingPage(
         image = R.drawable.second,
-        title = "Coordination",
-        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."
+        title = "Take Notes",
+        description = "Take some notes and share it with everyone"
     )
 
     object Third : OnBoardingPage(
         image = R.drawable.third,
-        title = "Dialogue",
-        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."
+        title = "Easy Remember",
+        description = "With this book you will be ready to start creating projects"
     )
 }

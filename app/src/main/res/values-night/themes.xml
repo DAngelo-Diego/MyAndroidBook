@@ -2,11 +2,11 @@
 <resources>
 
     <style name="Theme.MyAndroidBook" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:statusBarColor">@color/backgroundDark</item>
     </style>
 
     <style name="Theme.CustomSplashScreenTheme" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/black</item>
+        <item name="windowSplashScreenBackground">@color/backgroundDark</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/logo</item>
         <item name="windowSplashScreenAnimationDuration">600</item>
         <item name="postSplashScreenTheme">@style/Theme.MyAndroidBook</item>
