@@ -19,6 +19,7 @@ object RepositoryModule {
     fun provideUseCases(repository: Repository): UseCases {
         return UseCases(
             getAllAndroidInfoUseCase = GetAllAndroidInfoUseCase(repository = repository)
+
         )
     }
 }
