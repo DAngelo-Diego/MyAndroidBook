@@ -11,14 +11,14 @@ import com.example.myandroidbook.domain.model.AndroidModel
 interface AndroidDao {
 
     @Query("SELECT * FROM android_database ORDER BY id ASC")
-    fun getAllHeroes(): PagingSource<Int, AndroidModel>
+    fun getAllAndroidInfo(): PagingSource<Int, AndroidModel>
 
-    @Query("SELECT * FROM android_database WHERE id=:heroId")
-    fun getSelectedHero(heroId: Int): AndroidModel
+    @Query("SELECT * FROM android_database WHERE id=:infoId")
+    fun getSelectedAndroid(infoId: Int): AndroidModel
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addHeroes(heroes: List<AndroidModel>)
+    suspend fun addAndroidInfo(kotlinList: List<AndroidModel>)
 
     @Query("DELETE FROM android_database")
-    suspend fun deleteAllHeroes()
+    suspend fun deleteAllInfo()
 }

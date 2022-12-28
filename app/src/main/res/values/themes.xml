@@ -4,6 +4,7 @@
     <style name="Theme.MyAndroidBook" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@color/backgroundLight</item>
         <item name="android:windowLightStatusBar">true</item>
+
     </style>
 
     <style name="Theme.CustomSplashScreenTheme" parent="Theme.SplashScreen">

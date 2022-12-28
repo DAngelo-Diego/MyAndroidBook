@@ -1,6 +1,9 @@
 package com.example.myandroidbook.di
 
+import com.example.myandroidbook.data.local.AndroidDataBase
 import com.example.myandroidbook.data.remote.AndroidApi
+import com.example.myandroidbook.data.repository.RemoDataSourceImpl
+import com.example.myandroidbook.domain.repository.RemoteDataSource
 import com.example.myandroidbook.util.Constant.BASE_URL
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
@@ -15,7 +18,7 @@ import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-@ExperimentalSerializationApi
+@OptIn(ExperimentalSerializationApi::class)
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
@@ -28,6 +31,7 @@ object NetworkModule {
             .connectTimeout(15, TimeUnit.SECONDS)
             .build()
     }
+
 
     @Provides
     @Singleton
@@ -45,4 +49,17 @@ object NetworkModule {
     fun provideAndroidApi(retrofit: Retrofit) : AndroidApi {
         return retrofit.create(AndroidApi::class.java)
     }
+
+    @Provides
+    @Singleton
+    fun providesRemoteDataSource(
+        androidApi: AndroidApi,
+        androidDataBase: AndroidDataBase
+    ): RemoteDataSource {
+        return RemoDataSourceImpl(
+            androidApi = androidApi,
+            androidDataBase = androidDataBase
+        )
+    }
+
 }
