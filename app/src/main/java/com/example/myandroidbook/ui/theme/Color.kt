@@ -38,6 +38,7 @@ val topBarBackgroundDark = Color(0xFF2E3043)
 val iconLightSearch = Color(0xFF997B66)
 val iconDarkSearch = Color(0xFFBEC3E7)
 
+val starColor = Color(0xFFFFBB33)
 
 val Colors.buttonColor
 get() = if (isLight) buttonLight else buttonDark
