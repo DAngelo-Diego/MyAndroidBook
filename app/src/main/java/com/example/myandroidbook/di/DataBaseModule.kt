@@ -20,9 +20,12 @@ object DataBaseModule {
     @Singleton
     fun provideDatabase(
         @ApplicationContext context: Context
-    ) = Room.databaseBuilder(
-        context,
-        AndroidDataBase::class.java,
-        ANDROID_TABLE_MODEL_DATABASE_KEY
-    ).build()
+    ): AndroidDataBase {
+        return Room.databaseBuilder(
+            context,
+            AndroidDataBase::class.java,
+            ANDROID_TABLE_MODEL_DATABASE_KEY
+        ).build()
+    }
+
 }

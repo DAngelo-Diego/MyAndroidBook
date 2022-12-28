@@ -4,7 +4,7 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.myandroidbook.data.local.dao.AndroidDao
-import com.example.myandroidbook.data.local.dao.AndroidDaoRemoteKey
+import com.example.myandroidbook.data.local.dao.AndroidDaoRemoteKeys
 import com.example.myandroidbook.domain.model.AndroidModel
 import com.example.myandroidbook.domain.model.AndroidRemoteKeys
 
@@ -14,6 +14,6 @@ import com.example.myandroidbook.domain.model.AndroidRemoteKeys
 abstract class AndroidDataBase: RoomDatabase() {
 
     abstract fun androidDao(): AndroidDao
-    abstract fun androidDaoRemoteKey(): AndroidDaoRemoteKey
+    abstract fun androidDaoRemoteKeys(): AndroidDaoRemoteKeys
 
 }
