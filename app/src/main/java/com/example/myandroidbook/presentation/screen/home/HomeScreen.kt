@@ -7,13 +7,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.myandroidbook.presentation.common.ListContent
 import com.example.myandroidbook.presentation.components.RankingDifficulty
 import kotlinx.serialization.json.JsonNull.content
 
 @Composable
-fun HomeScreen(homeViewModel: HomeViewModel = hiltViewModel()
+fun HomeScreen(homeViewModel: HomeViewModel = hiltViewModel(), navController: NavHostController
 ) {
 
     val getAllAndroidInfo = homeViewModel.getAllAndroidInfo.collectAsLazyPagingItems()
@@ -23,14 +24,9 @@ fun HomeScreen(homeViewModel: HomeViewModel = hiltViewModel()
             HomeTopBar(onSearchClicked = {})
         },
         content = {
-            ListContent()
+            ListContent(languages = getAllAndroidInfo, navController = navController )
         }
     )
 
 }
 
-@Composable
-@Preview(showBackground = true)
-fun HomeScreenPreview() {
-    HomeScreen()
-}

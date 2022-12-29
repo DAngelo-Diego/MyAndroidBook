@@ -13,7 +13,7 @@ data class AndroidModel (
     val title: String,
     val image: String,
     val about: String,
-    val ranking: Int,
+    val ranking: Double,
     val difficulty: String,
     val tags: List<String>,
     val yearRelease: String
