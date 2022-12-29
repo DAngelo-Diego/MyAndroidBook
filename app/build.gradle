@@ -97,7 +97,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2"
 
     // Coil
-    implementation("io.coil-kt:coil-compose:1.3.2")
+    implementation "io.coil-kt:coil-compose:2.2.2"
 
     // Swipe to Refresh - Accompanist
     implementation "com.google.accompanist:accompanist-swiperefresh:$accompanist_version"
